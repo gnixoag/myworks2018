@@ -1,0 +1,199 @@
+\jxhj{%教学后记
+	}
+\skrq{%授课日期
+	2017年11月9日 4-5节}
+\ktmq{%课题名称
+	 型腔加工}
+\jxmb{%教学目标，每行前面要加 \item
+	\item 掌握挖槽加工的工艺；
+	\item 掌握挖槽加工的下刀方式；
+	\item 会写简单的挖槽程序。}
+\jxzd{%教学重点，每行前面要加 \item
+	\item 挖槽加工的工艺；
+	\item 写简单的挖槽程序。 }
+\jxnd{%教学难点，每行前面要加 \item
+	\item 写简单的挖槽程序。 }
+\jjff{%教学方法
+	通过讲述、举例、演示法来说明；}
+
+\makeshouye %制作教案首页
+
+%%%%教学内容
+\subsection{组织教学}
+\begin{enumerate}[\hspace{2em}1、]
+	\item 集中学生注意力；
+	\item 清查学生人数；
+	\item 维持课堂纪律；
+\end{enumerate}
+
+\subsection{复习导入及主要内容}
+\begin{enumerate}[1、]
+\item 增加刀路去残料；
+\item 加工实例；
+\item 相关计算。
+\end{enumerate}
+
+\subsection{教学内容及过程}
+\subsubsection{刀具的选择}
+要求：有底刃和侧刃（即键槽铣刀）两条侧刃
+
+但粗加工还是可以用立铣刀，（要先加工工艺孔）
+
+\subsubsection{下刀方式}
+1、直接下刀：一轴移动（预钻孔） 
+
+G01 Z\_\_ F(10-20)；
+
+2、斜线下刀：两轴移动（狭长地带）
+
+G01 Z\_\_ X\_\_ / Y\_\_ F(30-40)
+
+3、螺线下刀：三轴移动（空间较大）
+
+G17 G02/G03 X\_\_ Y\_\_ Z\_\_ I\_\_ J\_\_ / R\_\_ F\_\_
+
+指令要写全，不能省。
+
+\subsubsection{斜线下刀}
+
+1、坡度3°\~ 5°
+
+即：移动10mm下刀约1mm
+
+2、长度不够：
+
+可采用Z字形下刀
+
+3、斜坡铣削：
+
+G01 X\_\_ Z\_\_ F\_\_
+
+X\_\_  (返回)
+
+\subsubsection{去材料方式}
+
+1、往复铣削（如铣长方形）
+
+2、环形（如铣圆形，正方形）
+
+3、少用刀补来去材料
+
+\subsubsection{圆形槽铣削}
+
+利用数控铣床加在\diameter 110*35的毛坯上加工\diameter 100*5的槽。毛坯材料为45号钢，上表面未加工。按图样要求完成零件的节点、基点、辅助点计算。设定工件坐标系，制定正确的工艺方案（包括定位，夹紧方案和工艺路线），选择合理的刀具和切削工艺参数，编写数控加工程序。
+
+1、工艺分析：
+
+零件简单，尺寸精度均达到IT8-IT7级
+
+采用机用平口钳装夹，两侧面先工艺平面用于装夹
+
+工件坐标系原点设在铣好的上表面中心
+
+工序：平面
+
+挖槽：
+
+2、刀具选择：
+
+平面用\diameter 80可转位铣刀，
+
+挖槽：粗加工用\diameter 14三刃立铣刀
+
+精加工用\diameter 12四刃立铣刀
+
+3、刀削参数的选择：
+
+{\noindent
+    
+     \begin{figure}[!hbtp]
+        \centering
+        \footnotesize
+        %\hspace{-3.4ex}
+        \renewcommand\arraystretch{1.9}
+\begin{tabu}to 0.6\textwidth{|c|c|c|c|c|c|c|c|}
+    \hline 
+    序号 & 加工 & 刀具类型 & 刀具 & 主轴 & 进给& 长度 & 半径 \\ 
+    & 内容 &  & 材料 & 转速 & 速度 & 补偿 & 补偿 \\
+    \hline 
+    1 & 粗加工上表面 & \diameter 可转位铣刀 & 硬质合金 & 500 & 250 &  &  \\ 
+    \hline 
+    2&精加工上表面& \diameter 可转位铣刀  & 硬质合金 &800  &160  &  &  \\ 
+    \hline 
+    3&粗加工槽  & \diameter 14立铣刀 &高速钢  &500  &80  &  &7.2  \\ 
+    \hline 
+    4&精加工槽  & \diameter 12立铣刀 &高速钢  &800  &80  &  &5.985  \\ 
+    \hline 
+\end{tabu} 
+\end{figure}}
+
+4、走刀路径
+
+粗加工刀补：7.2  R0=42.8
+
+去残料圆半径   R1=35
+
+R2=27
+
+R3=19
+
+R4=11
+
+5、参考程序
+
+\begin{lstlisting}
+O0001;(粗加工)
+G54 G17 G40 G49 G90;
+M03 S500;
+G01 Z30.0 F100;
+X-42.8 Y0;
+Z0.5;
+G01 X42.8 Z-5.0 F40;
+X-42.8 F80;
+X-11.0;
+G02 I11.0;
+G01 X-19.0;
+G02 I19.0;
+G01 X-27.0;
+G02 I-27.0;
+G01 X-35;
+G02 I35.0;
+G01 X-42.8; 
+G02 I42.8;
+G0 Z30.0;
+M05;
+M30;
+\end{lstlisting}
+
+\begin{lstlisting}
+O0002;(精加工)
+G54 G17 G40 G49 G90
+M03 S800
+G01 Z30.0 F100
+XO Y0
+Z-5.0
+G01 G41 X40.0 Y-10.0 D1 
+G03 X50.0 Y0 R10.0
+G03 I50.0
+G03 X40.0 Y10.0 R10.0
+G40 G01 X0 Y0
+Z30.0
+M05
+M30
+\end{lstlisting}
+
+\subsection{课堂小结}
+\begin{enumerate}[1、]
+	\item 刀具的选择；
+	\item 下刀方式；
+	\item 斜线下刀；
+    \item 去残料方式；
+    \item 圆形槽铣削加工实例。
+\end{enumerate}
+
+\vfill
+\subsection{布置作业}
+\begin{enumerate}[1、]
+	\item 编写圆形槽的程序。
+\end{enumerate}
+\vfill

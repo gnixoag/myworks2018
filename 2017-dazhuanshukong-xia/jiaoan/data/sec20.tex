@@ -1,0 +1,198 @@
+\jxhj{%教学后记
+	}
+\skrq{%授课日期
+	2017年11月21日 4-5节}
+\ktmq{%课题名称
+	 孔加工概述}
+\jxmb{%教学目标，每行前面要加 \item
+	\item 掌握孔加工的加工工艺;
+	\item 掌握孔加工的六个动作;
+	\item 了解用子程序进行孔加工的编程;
+	\item 掌握G90/G91在孔加工中的区别。}
+\jxzd{%教学重点，每行前面要加 \item
+	\item 孔加工的六个动作；
+	\item G90/G91在孔加工中的区别。 }
+\jxnd{%教学难点，每行前面要加 \item
+	\item 用子程序进行孔加工的编程。 }
+\jjff{%教学方法
+	通过讲述、举例、演示法来说明；}
+
+\makeshouye %制作教案首页
+
+%%%%教学内容
+\subsection{组织教学}
+\begin{enumerate}[\hspace{2em}1、]
+	\item 集中学生注意力；
+	\item 清查学生人数；
+	\item 维持课堂纪律；
+\end{enumerate}
+
+\subsection{复习导入及主要内容}
+\begin{enumerate}[1、]
+\item 岛屿型腔加工的下刀方式；
+\item 岛屿槽去残料的方式；
+\item 用G91螺线下刀及Z向分层；
+\item 编写岛屿型腔的程序。
+\end{enumerate}
+
+\subsection{教学内容及过程}
+\subsubsection{孔加工工艺}
+1、钻孔
+
+刀具：中心钻（φ3、φ5）
+
+结构形状
+
+钻削深度：
+
+2、钻孔
+
+刀具：直柄麻花钻、锥柄麻花钻、群钻（各种直径）
+钻削深度：超出量，0.3倍刀具直径。
+
+3、扩孔
+
+刀具：
+
+4、镗孔：镗刀
+
+5、铰孔加工
+
+刀具：机用绞刀
+
+超出量：刀具值 一般2mm
+
+6、攻丝：
+
+柔性攻丝、刚性攻丝
+
+
+
+
+\subsubsection{孔加工的三个平面及六个动作}
+1、三个平面：
+
+初始平面
+
+R点平面
+
+孔底平面
+
+2、六个动作：
+
+XY向快速定位
+
+Z向快速下刀到R点平面
+
+Z向慢速下刀切削
+
+孔底动作
+
+返回到R点平面
+
+快速返回的初始平面
+
+\subsubsection{加工实例}
+
+在数控机床上加工如图所示的零件，是完成孔加工的程序编写。共四个孔，横向间距为80mm，纵向间距为60mm。孔的直径为10H7，有效深度为20mm。
+
+1、刀具的选择：
+
+\diameter 3的中心钻、\diameter9.8的直柄麻花钻、\diameter10H7的机用绞刀。
+
+2、加工工序
+
+3、加工程序
+
+
+\begin{lstlisting}
+02
+G54G17G40G90
+M3S1200
+G1Z30.F2000
+X-40.Y30.
+M98P21
+X40
+M98P21
+Y-30
+M98P21
+X-40
+M98P21
+G1Z30.F2000
+M5
+M99
+\end{lstlisting}
+\begin{lstlisting}
+O21(G90方式)
+G1Z5.0F2000
+Z-6.0F80
+Z5.0
+Z30.F2000
+M99
+\end{lstlisting}
+\begin{lstlisting}
+O21(G91方式)
+G91G1Z-25.0F2000
+Z-11.F80
+Z11.
+Z25.F2000
+G90
+M99
+\end{lstlisting}
+
+\begin{lstlisting}
+O3
+G55G17G40G90
+M3S500
+G1Z30.F2000
+X-40.Y30.
+M98P31
+X40
+M98P31
+Y-30
+M98P31
+X-40
+M98P31
+G1Z30.F2000
+M5
+M99
+\end{lstlisting}
+
+\begin{lstlisting}
+O4
+G56G17G40G90
+M3S500
+G1Z30.F2000
+X-40.Y30.
+M98P41
+X40
+M98P41
+Y-30
+M98P41
+X-40
+M98P41
+G1Z30.F2000
+M5
+M99
+……
+\end{lstlisting}
+
+\subsubsection{孔加工固定循环}
+
+G99/G98 G90/G91 G81-G89 X Y Z R Q P L
+
+
+\subsection{课堂小结}
+\begin{enumerate}[1、]
+\item 孔加工刀具；
+\item 孔加工方式；
+\item 铣孔与钻孔；
+\item 孔加工编程。
+\end{enumerate}
+
+\vfill
+\subsection{布置作业}
+\begin{enumerate}[1、]
+	\item 编写上面的程序。
+\end{enumerate}
+\vfill

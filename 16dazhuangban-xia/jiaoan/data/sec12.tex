@@ -1,0 +1,193 @@
+\jxhj{%教学后记
+	}
+\skrq{%授课日期
+	2017年10月24日 4-5节}
+\ktmq{%课题名称
+	 siemens编程应用}
+\jxmb{%教学目标，每行前面要加 \item
+	\item 掌握Siemens上子程序指令的使用；
+	\item 掌握Siemens上的编程；
+	\item 掌握Siemens上的半径补偿；
+	\item 掌握相关注意事项。 }
+\jxzd{%教学重点，每行前面要加 \item
+	\item Siemens上的编程；
+	\item Siemens上的半径补偿。 }
+\jxnd{%教学难点，每行前面要加 \item
+	\item Siemens上的半径补偿。 }
+\jjff{%教学方法
+	通过讲述、举例、演示法来说明；}
+
+\makeshouye %制作教案首页
+
+%%%%教学内容
+\subsection{组织教学}
+\begin{enumerate}[\hspace{2em}1、]
+	\item 集中学生注意力；
+	\item 清查学生人数；
+	\item 维持课堂纪律；
+\end{enumerate}
+\subsection{复习导入及主要内容}
+\begin{enumerate}[1、]
+\item 子程序Z向分层；
+\item 子程序XY向分层；
+\item 子程序的应用。
+\end{enumerate}
+
+\subsection{教学内容及过程}
+
+\subsubsection{Siemens上的程序名}
+Fanuc: O+四位数值 为程序号，
+
+即1号和0001号为同一个程序。
+
+0-7999： 用户使用。不能加密。
+
+8000-8999： 机床生产商和用户使用，可加密。
+
+9000-9999： 系统开发商使用，可加密。
+
+主程号与子程序号不区分。
+
+Siemens：  前两位为字母，后面任意。不能与系统已有的字
+重名。
+
+GX03  AAA  BBB   可以
+
+GOTO10  CYCLE81   不可以
+
+字程序：   L+四位数值组成
+
+也可以与主程序使用一样的规格。
+
+主程序的扩展名为  MPF
+
+子程序的扩展名为  SPF
+
+\subsubsection{Siemens上的G指令}
+1、G1    G2/G3
+
+Siemens  使用CR=\_\_表示半径。
+
+Siemens上还有其他使用格式。
+
+2、G4  暂停时间
+
+Fanuc： G4 X\_\_/P—  X表示秒，P表示毫秒。
+
+Sienem： G4 F\_\_   F表示秒。
+
+3、G17  G18  G19
+
+4、G20  G21    fanuc上 表示 英制 与公制
+
+G70  G71   Siemens上 表示 英制 与公制
+
+5、G27 G28 G29  Fanuc 表现 回参考点检查  回参考点  从参考点返回。
+
+G74  回参考点
+
+6、G40  G41  G42
+
+补偿号   在Siemens上称为刀沿号
+
+每一把刀具可以有9个切削刀沿。
+
+7、G43 G44  G49  Fanuc 刀具长度补偿
+
+T1D1  Siemens 上自动补偿。
+
+8、G53 G54-G59
+
+\subsubsection{Siemens上其他问题}
+
+1、子程序结束 RET M17
+
+2、子程序的调用 
+
+子程序名  P\_\_ 调用次数
+
+子程序的调用必须单独占用一个程序段。
+
+\subsubsection{Siemens编程实例}
+如图： 在数控机床上加工如图所示的零件，试用siemens
+格式编程。
+
+程序：
+\begin{lstlisting}
+GX01   粗加工
+G54G17G40G90
+T1D1
+M3S500
+G1Z30.F2000
+X-55.Y0
+Z5.
+Z0F200
+L1 P4
+Z0
+L2 P2
+Z3.
+Z30.F2000
+M5
+M2	
+\end{lstlisting}
+
+\begin{lstlisting}
+L1   方形轮廓子程序
+G91Z-2.5
+G90
+G41G1X-45.Y0
+G3X-35.Y0CR=10.
+G1Y35.
+X35.
+Y-35.
+X-35.
+Y0
+G3X-45.Y10.CR=10.
+G40G1X-55.Y0
+M17
+\end{lstlisting}
+
+\begin{lstlisting}
+L2  圆形轮廓子程序
+G91G1Z-2.5
+G90
+G41G1X-40.Y-10.
+G3X-30.Y0CH=10.
+G2I30.
+G3X-40.Y10.CH=10.
+G40G1X-55Y0
+RET
+\end{lstlisting}
+
+\begin{lstlisting}
+GX01   精加工
+G54G17G40G90
+T2D1
+M3S800
+G1Z30.F2000
+X-55.Y0
+Z5.
+Z-7.6F100  
+L1 
+Z-2.5
+L2 
+Z3.
+Z30.F2000
+M5
+M2
+\end{lstlisting}
+
+\subsection{课堂小结}
+\begin{enumerate}[1、]
+	\item Siemens上的程序名；
+	\item Siemens上的G指令；
+	\item Siemen上的子程序；
+	\item Siemens编程实例。
+\end{enumerate}
+
+\vfill
+\subsection{布置作业}
+\begin{enumerate}[1、]
+	\item 用Siemens格式编程一个程序。
+\end{enumerate}
+\vfill
