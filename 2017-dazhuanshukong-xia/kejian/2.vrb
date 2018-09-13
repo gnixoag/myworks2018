@@ -1,0 +1,18 @@
+\frametitle{程序结构}
+\begin{figure}
+       \centering
+       \includegraphics[width= \linewidth]{image/1-25}
+   \end{figure}
+    \begin{enumerate}
+        \item 序段号  ；
+        \item 程序段内容 ；
+        \item 程序段结束；
+        \item 程序段的斜杠跳跃；
+        \item 程序段注释 。
+    \end{enumerate}
+\begin{lstlisting}
+例  O0001；                    （程序号）
+G21 G17 G40 G49 G80 G90；
+T01 M06；                       (换刀指令)
+……
+\end{lstlisting}
