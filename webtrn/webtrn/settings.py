@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'webtrn.spiders'
 #USER_AGENT = 'webtrn (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+# ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -90,5 +90,5 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 FILES_STORE = 'D:\\pdf'
-ITEM_PIPELINES = {'webtrn.pipelines.WebtrnPipeline': 1}
+ITEM_PIPELINES = {'webtrn.pipelines.JxspPipeline': 1}
 

@@ -15,3 +15,9 @@ class WebtrnItem(scrapy.Item):
     files=scrapy.Field()
     #pdf_url=scrapy.Field()
 
+class JxspItem(scrapy.Item):
+    # define the fields for your item here like:
+    kechen_name = scrapy.Field()
+    file_urls=scrapy.Field()
+    files=scrapy.Field()
+    #pdf_url=scrapy.Field()
