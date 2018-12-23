@@ -4,40 +4,61 @@
 \setboolean{print}{true}
 %\setboolean{print}{false} %是否打印答案
 
+
 \author{高星}
 
 \begin{document}
 \noindent	
 	
-\begin{spacing}{1.5}
+\begin{spacing}{1.2}
 		\begin{center}
 			\zihao{3} \heiti 
 				湖南潇湘技师学院~~湖南九嶷职业技术学院
 				
-				\underline{~2017~-- 2018 }\,学年 \hspace{1cm} 第\,\underline{~1~}\,学期
+				\uline{\makebox[35mm][c]{2017-- 2018}}学年 \hspace{0.5cm} 第\,\uline{\makebox[10mm][c]{二}}期末考试试卷	
 				
-				\underline{~《 数铣编程与操作》~}\,期末考试试题\,\underline{~A~}\,卷 (\,时间： \underline{~90 分钟~}\,)
+				 \zihao{-4} \songti \vspace{5mm}
+				 \begin{tabu} to 0.45\textwidth {X[1.3,l]X[1,l]X[0.8,l]}
+					
+					课程名称:\zihao{5}  \uline{\makebox[35mm][c]{数铣编程与操作}}&
+					课程编号:\uline{\makebox[20mm][c]{~}} &
+					 \uline{~~~~~~~~~A~~~~~~~~~~}卷\\ 
+					
+					考试班级:\zihao{5} \uline{\makebox[35mm][c]{2017级大专模具班}}& 
+					考试方式:\uline{\makebox[20mm][c]{闭卷}}& 	
+					拟卷人:\uline{\makebox[18mm][c]{高星} } \\ 
+					
+					拟卷日期:\uline{\makebox[35mm][c]{2018.12.15}}& 
+					审核人:\uline{\makebox[25mm][c]{}} & 	
+					审核日期:\uline{\makebox[15mm][c]{}} \\ 
+			\end{tabu}  
 
-\zihao{-4} \songti \vspace{2mm}
+
+\zihao{-4} \songti \vspace{5mm}
 \begin{tabu} to 0.45\textwidth {|X[2,c]|X[1,c]|X[1,c]|X[1,c]|X[1,c]
-	|X[1,c]|X[1,c]|X[1,c]|X[1,c]|X[1,c]
-|X[1,c]|X[2,c]|}
+	|X[1,c]|X[1,c]|X[2,c]|}
 	\hline 
-	题\hfill 号&一&二&三&四&五&六& 七&八&九&十&总\hfill 分\\ 
+	题\hfill 号&一&二&三&四&五&六& 总\hfill 分\\ 
 	\hline 
-	得\hfill 分&  &  &  &  &  &  &  &  &  &  &  \\ 
+	得\hfill 分&  &  &  &  &  &  &   \\ 
 	\hline 
-	评\hfill 卷\hfill 人&  &  &  &  &  &  &  &  &  &  &  \\ 
+	评\hfill 卷\hfill 人&  &  &  &  &  &    &  \\ 
+	\hline 
+	复\hfill 查\hfill 人&  &  &  &  &  &    &  \\ 
 	\hline 
 \end{tabu} 
 \end{center}
 \end{spacing}
 
-\vspace{10pt}\zihao{5} 
+\vspace{-8pt}\zihao{5} 
 
 \begin{spacing}{1.3}
 	\begin{enumerate} [1、]
-		\item[\heiti 一、] {\heiti 填空题(每空2分，共20分)}
+		
+\item[\heiti \begin{minipage}{\@}\begin{tabular}{|c|c|}
+\hline	题~号 & 合~分\\ \hline 一& \\\hline\end{tabular}	\end{minipage} ]
+	
+\item [\heiti 一、 ]{\heiti 填空题(本大题共10小题，每小题2分，共20分)}
 %		\item 数控机床由 \tk{输入输出设备}、\tk{数控装置}、\tk{伺服系统}、\tk{机床本体} 和其它辅助装置等组成。
 		
 %		\item 数控机床按运动控制方式可分为\tk{点位控制数控机床}、直线控制数控机床和	\tk{连续控制数控机床}。
@@ -65,7 +86,7 @@
 %		\item 粗加工时，应选择\tk{较大}的背吃刀量、进给量，\tk{较少}的切削速度。
 %		精加工时，应选择\tk{较少}的进给量，较\tk{较大}的切削速度（较大/较少）。
 		
-%		\item 铣削进给速度F与铣刀刃数Z、主轴转速S、每齿进给量Fz的关系是	\tk{$F=Fz\times S\times Z$}		。
+		\item 铣削进给速度F与铣刀刃数Z、主轴转速S、每齿进给量Fz的关系是	\tk{$F=Fz\times S\times Z$}		。
 		
 %		\item 根据刀具回转切入方向与工件进给方向之间的关系不同，有\tk{顺}铣和\tk{逆}		铣之分。
 		
@@ -77,7 +98,7 @@
 		
 %		\item 在主程序中使用M99，则返回到\tk{主程序开头}。
 
-%		\item 若采用圆弧切入、切出工件，则刀具半径补偿值必须\tk{少于}切入、切出圆弧半径。
+		\item 若采用圆弧切入、切出工件，则刀具半径补偿值必须\tk{少于}切入、切出圆弧半径。
 
 %		\item 用6.2的刀补加工 $\diameter 80^{~\;0}_{-0.04}$ 的圆，经测量后其尺寸为\diameter 80.42，侧精加工刀补为\tk{5.98}。
 
@@ -91,9 +112,14 @@
 
 %		\item 若手轮的进给倍率旋钮选择x100，转动手轮5个脉冲，则机床移动\tk{0.5}mm。
 		
-\vspace{1cm}
+\vspace{0.5cm}
 
-\item[\heiti 二、] {\heiti 选择题(每题2分，共20分)}	
+\item[\heiti
+\begin{minipage}{\@}	\begin{tabular}{|c|c|}\hline
+		题~号 & 合~分\\ \hline		二&       \\\hline	\end{tabular}
+\end{minipage} ]
+
+\item[\heiti 二、]{\heiti 选择题(本大题共10小题，每小题2分，共20分)}	
 		
 \item 沿刀具前进方向观察，刀具偏在工件轮廓的左边上\tk{B}指令。
 \xx{G40}{G41}{G42}{G43}	
@@ -171,7 +197,10 @@
 %{G17 G3 X0 Y20.0 I0 J20.0}		{G17 G3 X-20.0 Y0 R-20.0}	
 
 \vspace{1cm}			
-\item[\heiti 三、] { \heiti 判断题(每题1分，共20分)}
+\item[\heiti
+\begin{minipage}{\@}	\begin{tabular}{|c|c|}\hline
+题~号 & 合~分\\ \hline		三&       \\\hline	\end{tabular}\end{minipage} ]
+\item[\heiti 三、]{\heiti 判断题(本大题共20小题，每小题2分，共20分)}
 		
 \item 圆弧插补中，对于整圆，其起点和终点相重合，用R编程无法定义，所以只能用圆心坐标编程。\pd{t}
 %\item 用数显技术改造后的机床就是数控机床。\pd{f}
@@ -180,7 +209,7 @@
 \item 圆弧插补用半径编程时，当圆弧所对应的圆心角大于180度时半径取负值。\pd{t}
 %\item 点位控制系统不仅要控制从一点到另一点的准确定位，还要控制从一点到另一点的路径。\pd{f}
 \item 通常在命名或编程时，不论何种机床，都一律假定工件静止刀具移动。\pd{t}
-\item 一个主程序中只能有一个子程序。\pd{f}
+%\item 一个主程序中只能有一个子程序。\pd{f}
 %\item 不同结构布局的数控机床有不同运动方式，但无论何种形式，编程时都认为工件相对于刀具运动。\pd{f}
 %\item 子程序的编写方式必须是增量的方式。\pd{f}
 \item Y坐标的圆心坐标符号一般用K表示。\pd{f}
@@ -188,14 +217,14 @@
 \item 沿着不在圆弧平面内的坐标轴的正方向向负方向看去，顺时针圆弧插补为G2，逆时针圆弧插补为G3。\pd{t}
 %\item 沿着不在圆弧平面内的坐标轴的负方向向正方向看去，顺时针圆弧插补为G2，逆时针圆弧插补为G3。\pd{f}
 \item 一个主程序调用另一个主程序称为主程序嵌套。\pd{f}
-%\item 切削速度增大时，切削温度升高，刀具耐用度大。\pd{f}
+\item 切削速度增大时，切削温度升高，刀具耐用度大。\pd{f}
 %\item 刀具补偿功能包括刀补的建立、刀补的执行。\pd{f}
 \item 数控机床中MDI是机床诊断智能化的英文缩写。\pd{f}
-\item 数控机床中CCW表示顺时针方向旋转，CW代表逆时针方向旋转。\pd{f}
+%\item 数控机床中CCW表示顺时针方向旋转，CW代表逆时针方向旋转。\pd{f}
 \item G3 X\_\_Y\_\_ I\_\_ K\_\_ F\_\_ 表示在XY平面顺时针插补。\pd{f}
 \item G40是数控编程中刀具左补偿指令。\pd{f}
 \item 同组模态G代码可以入在一个程序段中，而且与顺序无关。\pd{f}
-%\item 单节操作（SINGLE BLOCK）OFF时，能依照指定的程序，一个单节接一个单节连续执行。\pd{f}
+\item 单节操作（SINGLE BLOCK）OFF时，能依照指定的程序，一个单节接一个单节连续执行。\pd{f}
 %\item 铣削速度=$\pi$*铣刀直径*每分钟回转数(不考虑单位)。\pd{t}
 %\item 铣刀直径100mm，以25m/min速度铣削，其每分钟转数为40。\pd{f}
 \item 面铣刀直径100mm，以300rpm旋转时，切削速度为94m/min。\pd{t}
@@ -207,8 +236,8 @@
 %\item 制作NC程序时，G90与G91不宜在同一程序段中。\pd{t}
 \item 指令G43、G44、G49为刀具半径左、右补偿与消除。\pd{f}
 %\item 在执行G0指令时，刀具路径不一定为一直线。\pd{t}
-\item 程序G1 X\_\_ Y\_\_ F100，其中F100为主轴每回转床台进给100mm。\pd{f}
-%\item G17 G2 I100.0 J100.0 F100的刀具路径为φ100的圆。\pd{f}
+%\item 程序G1 X\_\_ Y\_\_ F100，其中F100为主轴每回转床台进给100mm。\pd{f}
+\item G17 G2 I100.0 J100.0 F100的刀具路径为φ100的圆。\pd{f}
 \item CNC铣床加工完毕后，为了让隔天下一个接班人操作方便，可不必清洁床台。\pd{f}
 %\item G17 G3 I100.0 J100.0 F100 其中I及J表示起点到圆心X轴、Y轴的分向量。\pd{t}
 \item 操作中程序有错误，须选择编辑（EDIT）操作模式修改程序。\pd{t}
@@ -216,7 +245,11 @@
 
 \vspace{1cm}
 	
-\item[\heiti 四、] {\heiti 简答题（每题5分，共10分）}
+\item[\heiti
+\begin{minipage}{\@}	\begin{tabular}{|c|c|}\hline
+		题~号 & 合~分\\ \hline		四&       \\\hline	\end{tabular}\end{minipage} ]
+
+\item[\heiti 四、]{\heiti 简答题（本大题共2小题，每小题5分，共10分）}
 
 %\item “取中法”对刀的原理及过程。
 %\jd{
@@ -236,14 +269,14 @@
 %}
 	
 \item 数控机床在使用中遇到紧急情况，你可以采取哪几种手段使数控铣床立即停止运行。
-\jd[3]{
+\jd[4]{
 1、使用急停；\\
 2、使用复位；\\
 3、进给保持；\\
 4、机床电源；
 }		
 \item 你是怎样开机的。
-\jd[3]{开机：开机前检查——外部电源——机床电源——取消急停——复位——回零
+\jd[4]{开机：开机前检查——外部电源——机床电源——取消急停——复位——回零
 	
 	 回零：回零方式——调节快速倍率——Z+——X+——Y+——各轴指示灯亮；}		
 %\item 怎样确定粗加工、半精/精加工时的刀具半径补偿值
@@ -385,30 +418,41 @@
 %M5
 %M99 
 %\end{verbatim}
+~~~
+\vspace{1mm} 
+\item[\heiti \begin{minipage}{\@}
+	\begin{tabular}{|c|c|}\hline 题~号 & 合~分\\ \hline	五& \\\hline\end{tabular}
+\end{minipage} ]{}
 
-\item[\heiti 五、] {\heiti 工艺分析（共30分））}
+\item[\heiti 五、] {\heiti 工艺分析（本大题共1小题，每小题30分，共30分）}
 
-\item 在数控机床上加工如图所示的零件，试完成工件坐标系的设定，刀具的选择，切削用量的选择，最后填写好加工工序表，并在图上画出走刀路径。
+
+\item 在数控机床上加工如图\ref{fig:1}所示的零件，试完成工件坐标系的设定，刀具的选择，切削用量的选择，最后填写好加工工序表，并在图上画出走刀路径。
+
 \begin{figure}[pht]
 	\centering
-	\includegraphics[width=0.5\linewidth,trim=220 10 250 10,clip]{image/1.jpg}
-%	\caption{刀补实例}
+	\includegraphics[width=0.5\linewidth,trim=220 10 250 10,clip]{image/2.jpg}
+	\caption{工艺分析题}
 	\label{fig:1}
 \end{figure}
 
+\vfill
+
+\newpage
 工艺：  
 
-\hspace{-1.5cm}
+\hspace{-1.1cm}
 \begin{tabu} to 0.5\textwidth {|X[1,c]|X[2,c]|X[1,c]|X[1,c]|X[1,c]
 		|X[1,c]|X[1,c]|X[1,c]|X[1,c]|X[1,c]|}
 	\hline 
 	序号&加工内容&刀具&T&S&F&ap&D&H&备注\\ \hline 
 	1&&&&&&&&&\\[0.1cm] \hline 	2&&&&&&&&&\\[0.1cm] \hline 
-		3&&&&&&&&&\\[0.1cm] \hline 	4&&&&&&&&&\\[0.1cm] \hline 	5&&&&&&&&&\\[0.1cm] \hline 	6&&&&&&&&&\\[0.1cm] \hline 	7&&&&&&&&&\\[0.1cm] \hline   8&&&&&&&&&\\[0.1cm] \hline 
+	3&&&&&&&&&\\[0.1cm] \hline 	4&&&&&&&&&\\[0.1cm] \hline 	5&&&&&&&&&\\[0.1cm] \hline 	6&&&&&&&&&\\[0.1cm] \hline 	7&&&&&&&&&\\[0.1cm] \hline   8&&&&&&&&&\\[0.1cm] \hline 
 		
 \end{tabu} 
 
-\newpage 程序：
+%\newpage 
+程序：
 
 \begin{lstlisting}
 O1	(主程序，安排加工顺序)
@@ -428,8 +472,6 @@ M30
 
 
 
- \newpage
-程序：
  \newpage
 程序：
 	\end{enumerate} 

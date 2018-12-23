@@ -52,13 +52,17 @@ columnsep=1.5cm]{geometry}
 \fancyhead[RE]{\leavevmode\vbox to0pt{
 		\vss\rlap{\putzdxx }\vskip -26cm }} %奇数页眉的右边                       
 \fancyhead[LO]{\leavevmode\vbox to0pt{
-		\vss\rlap{\putzdx }\vskip -26cm }} %偶数页眉的左边 
+		\vss\rlap{\putzdx }\vskip -26cm }} %偶数页眉的左边
+\renewcommand{\headrulewidth}{0.5pt} 
+\fancyhead[C]{《数控编程与操作》课程期未考试试卷 } %页眉中小
 
 \newsavebox{\zdxa}%装订线
 
 \sbox{\zdxa}
-{\parbox{27cm}{\centering \heiti \hspace{1cm}
-		系~部：\underline{\makebox[30mm][c]{}}~~~ 班~级：\underline{\makebox[45mm][c]{}}~~~ 姓~名：\underline{\makebox[30mm][c]{}}~~~ 学~号：\underline{\makebox[30mm][c]{}} \\
+{	\parbox{27cm}{\centering \heiti \hspace{1cm}
+		系~部：\underline{\makebox[25mm][c]{}}~~~
+		专~业：\underline{\makebox[25mm][c]{}}~~~ 班~级：\underline{\makebox[45mm][c]{}}~~~  学~号：\underline{\makebox[25mm][c]{}}~~~
+		姓~名：\underline{\makebox[25mm][c]{}} \\
 		\vspace{1mm}
 %		请在所附答题纸上空出密封位置。并填写试卷序号、班级、学号和 姓名\\
 		%答题时学号
@@ -68,8 +72,12 @@ columnsep=1.5cm]{geometry}
 \newsavebox{\zdxb}%装订线
 \sbox{\zdxb}
 {\parbox{27cm}{\centering \heiti
-		\vspace{30mm}
-		\vspace{1mm}
+		\vspace{25mm}
+		装~~~~~~订~~~~~~区~~~~~~~~~~~~
+		装~~~~~~订~~~~~~区~~~~~~ ~~~~~~
+		装~~~~~~订~~~~~~区~~~~~~~~~~~~
+		装~~~~~~订~~~~~~区\\
+		\vspace{6mm}
 		\dotfill{} 〇 \dotfill{}密\dotfill{}封\dotfill{}线\dotfill{}〇\dotfill{} \\
 }}
 
